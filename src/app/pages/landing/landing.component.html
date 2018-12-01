@@ -1,0 +1,76 @@
+<div class="main">
+    <div class="whatsapp">
+      <div class="wp-modal" id="resultado">
+        <div class="white-circle">
+        <div class="comercial-img">
+            <img src="assets/landing/imgs/comercial.png" alt="">
+          </div>
+        </div>
+        <div class="seccion-1">
+          <span style="color: black;">Laura Gomez</span>
+          <p>Bienvenido a 24-7 logistic solution, cuéntanos en qué tipo de servicio estás interesad@. Estoy lista para atender tu requerimiento. </p>
+        </div>
+        <div class="seccion-2">
+          <input type="text" placeholder="Escribe aqui..." (keydown.enter)="enviarMensaje($event)">
+        </div>
+      </div>
+        <img (click)="mostrarModal()"  src="assets/landing/imgs/whatsapp.png" alt="">
+      </div>
+  <div class="principal">
+    <div class="header" >
+      <img src="assets/landing/imgs/logo.png" class="logo" alt="logo">
+    </div>
+  
+    <div class="copy">
+      <div class="texto-1 trapecio-1">
+        <h1>Soluciones integrales logísticas a su medida.</h1>
+      </div>
+      <div class="texto-2 trapecio-2">
+    <h3>Atencion las 24Hrs.</h3>
+      </div>
+    </div>
+  
+  </div>
+  <div class="secondary">
+    <h3>NUESTROS SERVICIOS</h3>
+
+    <div class="container">
+      <div class="row tarjetas">
+        <div class="col"></div>
+        <div class="col-md-2 pointer">
+          <img src="/assets/landing/imgs/imagen-1.jpg" (click)="openDialog('TRANSPORTE DE CARGA', '/assets/landing/imgs/imagen-1.jpg')" alt="">
+          <div class="difuminado">
+            <h2>TRANSPORTE DE CARGA</h2>  
+          </div>
+        </div>
+        <div class="col-md-2 pointer">
+            <img src="/assets/landing/imgs/imagen-2.jpg" (click)="openDialog('MONTACARGAS' , '/assets/landing/imgs/imagen-2.jpg')" alt="">
+            <div class="difuminado">
+                <h2>ALQUILER DE MONTACARGAS</h2>  
+              </div>
+        </div>
+        <div class="col-md-2 pointer">
+          <div class="imagen">
+            <img src="/assets/landing/imgs/imagen-4.jpg" (click)="openDialog('ALQUILER DE GRUAS Y OTRA MAQUINARIA AMARILLA' , '/assets/landing/imgs/imagen-4.jpg')" alt="">
+          </div>
+            <div class="difuminado">
+                <h2>ALQUILER DE GRUAS Y OTRA MAQUINARIA AMARILLA</h2>  
+              </div>
+        </div>
+        <div class="col-md-2 pointer">
+            <img src="/assets/landing/imgs/imagen-5.jpg" (click)="openDialog('SERVICIOS ITR' , '/assets/landing/imgs/imagen-5.jpg')" alt="">
+            <div class="difuminado">
+                <h2>SERVICIOS ITR</h2>  
+              </div>
+        </div>
+        <div class="col-md-2 pointer">
+            <img src="/assets/landing/imgs/imagen-6.jpg" (click)="openDialog('OPERARIOS DE CARGUE Y DESCARGUE' , '/assets/landing/imgs/imagen-6.jpg')" alt="">
+            <div class="difuminado">
+                <h2>OPERARIOS DE CARGUE Y DESCARGUE</h2>  
+              </div>
+        </div>
+        <div class="col-md"></div>
+      </div>
+    </div>
+  </div>
+</div>

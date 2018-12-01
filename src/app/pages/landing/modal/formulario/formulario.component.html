@@ -1,0 +1,83 @@
+<div class="modal">
+
+    <div class="modal__container">
+      <div class="modal__featured d-none d-lg-block" >
+        <button type="button" class="button--transparent button--close" (click)="onNoClick()">
+          <svg class="nc-icon glyph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32">
+            <g><path fill="#ffffff" d="M1.293,15.293L11,5.586L12.414,7l-8,8H31v2H4.414l8,8L11,26.414l-9.707-9.707 C0.902,16.316,0.902,15.684,1.293,15.293z"></path> </g></svg>
+          <span class="visuallyhidden"></span>
+        </button>
+        <div class="modal__circle" [ngStyle]="{'background':'url('+ data.imagen+')'}"></div>
+      </div>
+      <div class="modal__content">
+        <h2>{{data.nombre}}</h2>
+
+        <form ngValidate [formGroup]="forma" (submit)="sendEmail(message)" >
+          <ul class="form-list">
+              <li class="form-list__row form-list__row--inline">
+                  <div>
+                    <label>Nombre Empresa *</label>
+                    <input type="text" name="nombreEmpresa" required formControlName="nombreEmpresa" [(ngModel)]="message.nombreEmpresa"/>
+                  </div>
+                  <div>
+                    <label>
+                      NIT *
+                    </label>
+                    <input type="number" name="nit" required formControlName="nit" [(ngModel)]="message.nit"/>
+                  </div>
+                </li>
+            <li class="form-list__row" *ngIf="nombre == 'TRANSPORTE DE CARGA' || nombre == 'ALQUILER DE GRUAS Y OTRA MAQUINARIA AMARILLA'">
+              <label>Servicio *</label>
+              <select class="form-control" name="servicio" required formControlName="servicio" [(ngModel)]="message.servicio" >
+                <option *ngFor="let tipo of tipos" >{{tipo}}</option>
+              </select>
+            </li>
+            <li class="form-list__row form-list__row--inline" *ngIf="nombre == 'TRANSPORTE DE CARGA'">
+              <div>
+                <label>Origen *</label>
+                <input type="text" name="origen" required formControlName="origen" [(ngModel)]="message.origen" />
+              </div>
+              <div>
+                <label>Destino *</label>
+                <input type="text" name="" required formControlName="destino" [(ngModel)]="message.destino" />
+              </div>
+            </li>
+
+            <li class="form-list__row form-list__row--inline">
+                <div>
+                  <label>Persona Contacto *</label>
+                  <input type="text" name="nombre" required formControlName="nombre" [(ngModel)]="message.nombre"/>
+                </div>
+                <div>
+                  <label>
+                    Telefono *
+                  </label>
+                  <input type="tel"  name="tel" required formControlName="tel" [(ngModel)]="message.tel" />
+                </div>
+              </li>
+
+              <li class="form-list__row">
+                  <label>Correo Electronico *</label>
+                    <input type="text" name="correo" required formControlName="correo" [(ngModel)]="message.correo" />
+                </li>
+
+            
+                <li class="form-list__row">
+                    <label>Comentarios</label>
+                      <input type="text" name="comentarios" required formControlName="comentarios" [(ngModel)]="message.comentarios" />
+                  </li>
+            <!-- <li class="form-list__row form-list__row--agree">
+              <label>
+                <input type="checkbox" name="save_cc" checked="checked">
+                Save my card for future purchases
+              </label>
+            </li> -->
+            <li>
+              <button type="submit" class="button">Enviar</button>
+            </li>
+          </ul>
+        </form>
+      </div> <!-- END: .modal__content -->
+    </div> <!-- END: .modal__container -->
+  </div> <!-- END: .modal -->
+  

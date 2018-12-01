@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@font-face {
+    font-family: 'brandon';
+    src: url('/assets/fonts/brandon/HVD Fonts - BrandonText-Bold.otf');
+}
+
+*{
+    font-family: 'brandon'!important;
+}
+
+.pointer{
+    cursor: pointer;
+}
