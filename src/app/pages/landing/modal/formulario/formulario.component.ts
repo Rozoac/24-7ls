@@ -95,7 +95,10 @@ export class FormularioComponent implements OnInit {
    
 
    sendEmail(message:Cliente){
-     debugger
+    if (message.servicio === undefined){
+      message.servicio = this.data.nombre;
+      console.log(message.servicio);
+    } 
     if (!this.forma.value.nombreEmpresa || !this.forma.value.nit || !this.forma.value.nombre || !this.forma.value.tel || !this.forma.value.correo || !this.forma.value.nit ) {
       swal({
         type: "error",

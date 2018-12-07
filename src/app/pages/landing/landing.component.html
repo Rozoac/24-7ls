@@ -1,6 +1,11 @@
 <div class="main">
+    <ul>
+        <li>
+          <a href="https://www.facebook.com/24.7LogisiticSolutions" target="_blank" class="facebook"><span>Facebook</span><i class="fab fa-facebook-square"></i></a>
+        </li>
+      </ul>
     <div class="whatsapp">
-      <div class="wp-modal" id="resultado">
+      <div class="wp-modal add wow bounceIn" id="resultado">
         <div class="white-circle">
         <div class="comercial-img">
             <img src="assets/landing/imgs/comercial.png" alt="">
@@ -17,39 +22,39 @@
         <img (click)="mostrarModal()"  src="assets/landing/imgs/whatsapp.png" alt="">
       </div>
   <div class="principal">
+    
     <div class="header" >
       <img src="assets/landing/imgs/logo.png" class="logo" alt="logo">
     </div>
   
     <div class="copy">
-      <div class="texto-1 trapecio-1">
-        <h1>Soluciones integrales logísticas a su medida.</h1>
-      </div>
-      <div class="texto-2 trapecio-2">
-    <h3>Atencion las 24Hrs.</h3>
+        <div class="texto-1 trapecio-1 wow bounceInRight">
+          <h1>Soluciones integrales logísticas a su medida.</h1>
+        </div>
+        <div class="texto-2 trapecio-2 wow bounceInRight " data-wow-duration="2s">
+      <h3>Atencion las 24Hrs.</h3>
       </div>
     </div>
-  
+
   </div>
   <div class="secondary">
-    <h3>NUESTROS SERVICIOS</h3>
-
+    <h3 class="wow flipInX" data-wow-duration="2s">NUESTROS SERVICIOS</h3>
     <div class="container">
       <div class="row tarjetas">
         <div class="col"></div>
-        <div class="col-md-2 pointer">
+        <div class="col-md-2 pointer wow fadeIn" data-wow-duration="3s">
           <img src="/assets/landing/imgs/imagen-1.jpg" (click)="openDialog('TRANSPORTE DE CARGA', '/assets/landing/imgs/imagen-1.jpg')" alt="">
           <div class="difuminado">
             <h2>TRANSPORTE DE CARGA</h2>  
           </div>
         </div>
-        <div class="col-md-2 pointer">
+        <div class="col-md-2 pointer wow fadeIn">
             <img src="/assets/landing/imgs/imagen-2.jpg" (click)="openDialog('MONTACARGAS' , '/assets/landing/imgs/imagen-2.jpg')" alt="">
             <div class="difuminado">
                 <h2>ALQUILER DE MONTACARGAS</h2>  
               </div>
         </div>
-        <div class="col-md-2 pointer">
+        <div class="col-md-2 pointer wow fadeIn">
           <div class="imagen">
             <img src="/assets/landing/imgs/imagen-4.jpg" (click)="openDialog('ALQUILER DE GRUAS Y OTRA MAQUINARIA AMARILLA' , '/assets/landing/imgs/imagen-4.jpg')" alt="">
           </div>
@@ -57,13 +62,13 @@
                 <h2>ALQUILER DE GRUAS Y OTRA MAQUINARIA AMARILLA</h2>  
               </div>
         </div>
-        <div class="col-md-2 pointer">
+        <div class="col-md-2 pointer wow fadeIn">
             <img src="/assets/landing/imgs/imagen-5.jpg" (click)="openDialog('SERVICIOS ITR' , '/assets/landing/imgs/imagen-5.jpg')" alt="">
             <div class="difuminado">
                 <h2>SERVICIOS ITR</h2>  
               </div>
         </div>
-        <div class="col-md-2 pointer">
+        <div class="col-md-2 pointer wow fadeIn">
             <img src="/assets/landing/imgs/imagen-6.jpg" (click)="openDialog('OPERARIOS DE CARGUE Y DESCARGUE' , '/assets/landing/imgs/imagen-6.jpg')" alt="">
             <div class="difuminado">
                 <h2>OPERARIOS DE CARGUE Y DESCARGUE</h2>  
