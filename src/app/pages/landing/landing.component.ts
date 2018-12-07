@@ -3,6 +3,7 @@ import { NguCarouselConfig, NguCarouselStore } from '@ngu/carousel';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material';
 import { FormularioComponent } from './modal/formulario/formulario.component';
 import {trigger, state, style, animate, transition } from '@angular/animations'; 
+import { Contacto } from '../../../../../ecuador/src/app/models/contacto.model';
 
 
 @Component({
@@ -13,19 +14,35 @@ import {trigger, state, style, animate, transition } from '@angular/animations';
 })
 export class LandingComponent implements OnInit {
   public carouselTile: NguCarouselConfig;
+  public contador = 0;
   constructor(public dialog: MatDialog, public el: ElementRef){
 
   }
+  
+  @HostListener("window:scroll", ['$event'])
+  doSomethingOnWindowsScroll($event:Event){
+    let scrollOffset = $event.srcElement.children[0].scrollTop;
+    // console.log("window scroll: ", scrollOffset);
+    
+    if(scrollOffset > 300 && this.contador < 1){
+      console.log(this.contador);
+      this.contador = this.contador + 1;
+      return this.mostrarModal();
+     }
+  }
 
-  @HostListener('window:scroll', ['$event'])
+
   
   ngOnInit() {
-    this.checkScroll()
+    
   }
 
   mostrarModal(){
-    console.log('entro');
-    document.getElementById("resultado").classList.toggle('add');
+    document.getElementById("resultado").classList.remove('add');
+
+  }
+  cerrar(){
+    document.getElementById("resultado").classList.add('add');
 
   }
 
@@ -47,21 +64,9 @@ export class LandingComponent implements OnInit {
     });
   }
 
-  checkScroll() {
-    let contador = 0;
-    const componentPosition = this.el.nativeElement.offsetTop
-    const scrollPosition:number = window.pageYOffset
-    console.log(scrollPosition);
- console.log(contador+ "contador");
-    if(contador < 1){
-      if(scrollPosition > 515){
-        contador = contador+1;
-         this.mostrarModal();
-       return;
-       }
-    }
+  
 
-  }
+
 
   /* It will be triggered on every slide*/
 
